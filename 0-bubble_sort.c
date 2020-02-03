@@ -3,6 +3,19 @@
 #include "sort.h"
 
 /**
+ * swap_int - reset n to 98.
+ * @a: variable to be swapping with b.
+ * @b: variable to be swapping with a.
+ * Return: nothing.
+ */
+void swap_int(int *a, int *b)
+{
+int c = *a;
+*a = *b;
+*b = c;
+}
+
+/**
  * bubble_sort - sorts an array of integers
  * ************* in ascending order using
  * ************* the Bubble sort algorithm
@@ -19,9 +32,7 @@ for (i = 1; i < size; i++)
 {
 if (array[i - 1] > array[i])
 {
-int k = array[i - 1];
-array[i - 1] = array[i];
-array[i] = k;
+swap_int(&array[i - 1], &array[i]);
 }
 }
 print_array(array, size);
