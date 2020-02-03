@@ -33,8 +33,8 @@ for (i = 1; i < size; i++)
 if (array[i - 1] > array[i])
 {
 swap_int(&array[i - 1], &array[i]);
-}
-}
 print_array(array, size);
+}
+}
 }
 }
