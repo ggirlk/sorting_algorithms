@@ -23,6 +23,7 @@ int c = *a;
  * @size: size of array
  * Return: nothing
  */
+
 void bubble_sort(int *array, size_t size)
 {
 size_t i, j;
