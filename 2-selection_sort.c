@@ -1,53 +1,26 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "sort.h"
-
 /**
- * insertion_sort_list - sorts a doubly linked
- * ********************* list of integers in ascending
- * ********************* order using the Insertion sort algorithm
- * @list: d linked list
- * Return: nothing
- */
-void insertion_sort_list(listint_t **list)
+*selection_sort - a function that sorts an array using the Selection sort
+*@array: unsroted array
+*@size: the size of the array divided on the first element
+*Return: nothing
+*/
+void selection_sort(int *array, size_t size)
 {
-listint_t *l, *ltmp;
-l = (listint_t *)malloc(sizeof(listint_t *));
-ltmp = (listint_t *)malloc(sizeof(listint_t *));
-if (l == NULL && ltmp == NULL)
-exit(0);
-
-l = (*list)->next;
-while (l)
+int current, temp = 0;
+size_t size_loop, element = 0;
+for (size_loop = 0; size_loop != size - 1; size_loop++)
 {
-ltmp = l->prev;
-if (ltmp->n > l->n)
+current = size_loop;
+for (element = size_loop + 1; element < size; element++)
 {
-node_swap(ltmp, l);
-print_list(*list);
-l = (*list)->next;
-}
-l = l->next;
+if (array[current] > array[element])
+{
+temp = array[current];
+array[current] = array[element];
+array[element] = temp;
 }
 }
-/**
- * node_swap - swap 2 nodes
- * @left: prev
- * @right: next
- * Return: nothing
- */
-void node_swap(listint_t *left, listint_t *right)
-{
-listint_t *tmp;
-tmp = left->prev;
-if (tmp)
-tmp->next = right;
-right->prev = tmp;
-
-left->prev = right;
-left->next = right->next;
-right->next = left;
-if (left->next != NULL)
-left->next->prev = left;
+print_array(array, size);
 }
-
+}
