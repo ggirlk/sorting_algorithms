@@ -19,16 +19,15 @@ if (list == NULL && left == NULL && right == NULL)
 exit(0);
 
 left = (*list)->next;
-right = (*list);
 while (left)
 {
+right = left->prev;
 if (right->n > left->n)
 {
 node_swap(right, left);
 print_list(*list);
 left = (*list)->next;
 }
-right = left;
 left = left->next;
 }
 }
