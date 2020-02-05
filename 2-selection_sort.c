@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "sort.h"
 /**
  *selection_sort - a function that sorts an array using the Selection sort
