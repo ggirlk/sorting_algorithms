@@ -23,4 +23,3 @@ array[i] = temp;
 print_array(array, size);
 }
 }
-
