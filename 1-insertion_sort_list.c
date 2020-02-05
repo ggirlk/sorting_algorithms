@@ -13,6 +13,7 @@
 void insertion_sort_list(listint_t **list)
 {
 listint_t *left, *right;
+int i = 0;
 left = (listint_t *)malloc(sizeof(listint_t *));
 right = (listint_t *)malloc(sizeof(listint_t *));
 if (list == NULL && left == NULL && right == NULL)
@@ -29,6 +30,7 @@ print_list(*list);
 left = (*list)->next;
 }
 left = left->next;
+i++;
 }
 }
 /**
