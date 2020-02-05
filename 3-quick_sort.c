@@ -24,17 +24,17 @@ int c = *a;
 int partition(int *arr, int low, int high)
 {
 int pivot = arr[high];
-int j, i = (low - 1);
-for (j = low; j <= high- 1; j++)
+int j, i = low;
+for (j = low; j < high; j++)
 {
 if (arr[j] < pivot)
 {
-i++;
 swap_int(&arr[i], &arr[j]);
+i++;
 }
 }
-swap_int(&arr[i + 1], &arr[high]);
-return (i + 1);
+swap_int(&arr[i], &arr[high]);
+return (i);
 }
 /**
  * quickSort - sort array.
@@ -48,10 +48,9 @@ void quickSort(int *arr, int low, int high, size_t size)
 if (low < high)
 {
 int pi = partition(arr, low, high);
-quickSort(arr, low, pi - 1, size);
 print_array(arr, size);
+quickSort(arr, low, pi - 1, size);
 quickSort(arr, pi + 1, high, size);
-
 }
 }
 /**
