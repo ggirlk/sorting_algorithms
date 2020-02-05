@@ -29,9 +29,12 @@ for (j = low; j < high; j++)
 {
 if (arr[j] < pivot)
 {
+if (i != j)
+{
 swap_int(&arr[i], &arr[j]);
 print_array(arr, size);
 i++;
+}
 }
 }
 if (arr[high] < arr[i])
