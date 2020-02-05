@@ -40,6 +40,7 @@ return (i);
  * quickSort - sort array.
  * @arr: array.
  * @low: low position
+ * @high: higher position.
  * @size: array size
  * Return: nothing.
  */
