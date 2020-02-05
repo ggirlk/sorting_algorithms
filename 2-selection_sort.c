@@ -13,6 +13,8 @@ size_t i, j;
 int min_idx, temp;
 if (size < 2)
 return;
+if (array == NULL)
+return;
 for (i = 0; i < size - 1; i++)
 {
 min_idx = i;
