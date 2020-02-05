@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "sort.h"
@@ -12,24 +11,23 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-listint_t *left, *right;
-left = (listint_t *)malloc(sizeof(listint_t *));
-right = (listint_t *)malloc(sizeof(listint_t *));
-if (list == NULL && left == NULL && right == NULL)
+listint_t *l, *ltmp;
+l = (listint_t *)malloc(sizeof(listint_t *));
+ltmp = (listint_t *)malloc(sizeof(listint_t *));
+if (l == NULL && ltmp == NULL)
 exit(0);
 
-left = (*list)->next;
-right = (*list);
-while (left)
+l = (*list)->next;
+while (l)
 {
-if (right->n > left->n)
+ltmp = l->prev;
+if (ltmp->n > l->n)
 {
-node_swap(right, left);
+node_swap(ltmp, l);
 print_list(*list);
-left = (*list)->next;
+l = (*list)->next;
 }
-right = left;
-left = left->next;
+l = l->next;
 }
 }
 /**
